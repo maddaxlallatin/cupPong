@@ -7,6 +7,8 @@ TagManager:
   - Local Left Hand
   - Local Head
   - Local Right Hand
+  - Keyboard
+  - codeText
   layers:
   - Default
   - TransparentFX
