@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
 public class NumberPress : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -41,4 +43,18 @@ public class NumberPress : MonoBehaviour
 
     //add a joinRoom method, on the method connect to a room with a code (see NetworkManager.cs)
     //add a createRoom method, on the method create to a room with a code (see NetworkManager.cs)
+
+    public void createRoom(){
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 2;
+        roomOptions.IsVisible = true;
+        roomOptions.IsOpen = true;
+        PhotonNetwork.CreateRoom(codeText.text, roomOptions, TypedLobby.Default);
+        codeText.text = "Creating Room...";
+    }
+
+    public void joinRoom(){
+        PhotonNetwork.JoinRoom(codeText.text);
+        codeText.text = "Joining Room...";
+    }
 }

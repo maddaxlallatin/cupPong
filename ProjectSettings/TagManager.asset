@@ -9,6 +9,9 @@ TagManager:
   - Local Right Hand
   - Keyboard
   - codeText
+  - joinRoomButton
+  - createRoomButton
+  - lobbyUI
   layers:
   - Default
   - TransparentFX

@@ -5,9 +5,19 @@ using Photon.Pun;
 using Photon.Realtime;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    private GameObject joinRoomButton;
+    private GameObject createRoomButton;
+    private GameObject lobbyUI;
     // Start is called before the first frame update
+    void Awake(){
+        joinRoomButton = GameObject.FindWithTag("joinRoomButton");
+        createRoomButton = GameObject.FindWithTag("createRoomButton");
+        lobbyUI = GameObject.FindWithTag("lobbyUI");
+    }
     void Start()
     {
+        joinRoomButton.SetActive(false);
+        createRoomButton.SetActive(false);
         ConnectToServer();
     }
 
@@ -20,13 +30,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to server");
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 2;
-        roomOptions.IsVisible = true;
-        roomOptions.IsOpen = true;
+        joinRoomButton.SetActive(true);
+        createRoomButton.SetActive(true);
 
 
-        PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
+      //  PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
                 base.OnConnectedToMaster();
 
     }
@@ -35,6 +43,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined room");
         base.OnJoinedRoom();
+        lobbyUI.SetActive(false);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
