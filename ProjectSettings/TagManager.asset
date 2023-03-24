@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Local Left Hand
+  - Local Head
+  - Local Right Hand
   layers:
   - Default
   - TransparentFX
@@ -11,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - PlayerSelf
-  - 
-  - 
+  - Local Head
+  - Local Left Hand
+  - Local Right Hand
   - 
   - 
   - 
