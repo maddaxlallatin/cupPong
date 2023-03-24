@@ -18,7 +18,7 @@ public class NetworkPlayer : MonoBehaviour
     private GameObject localRightHand;
     public GameObject networkRightHand;
     private PhotonView PV;
-    // Start is called before the first frame update
+    
     private void Awake()
     {
         if (localHead == null)
