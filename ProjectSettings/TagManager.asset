@@ -12,6 +12,7 @@ TagManager:
   - joinRoomButton
   - createRoomButton
   - lobbyUI
+  - ball
   layers:
   - Default
   - TransparentFX
