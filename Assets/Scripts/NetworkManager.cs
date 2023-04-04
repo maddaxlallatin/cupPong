@@ -44,6 +44,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room");
         base.OnJoinedRoom();
         lobbyUI.SetActive(false);
+        PhotonNetwork.Instantiate("Ball", Vector3.zero, Quaternion.identity);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
