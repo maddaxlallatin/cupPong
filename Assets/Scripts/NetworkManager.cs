@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.Events;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     private GameObject joinRoomButton;
     private GameObject createRoomButton;
     private GameObject lobbyUI;
+    public  UnityEvent connectedToServer;
     // Start is called before the first frame update
     void Awake(){
         joinRoomButton = GameObject.FindWithTag("joinRoomButton");
@@ -44,7 +46,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room");
         base.OnJoinedRoom();
         lobbyUI.SetActive(false);
-        PhotonNetwork.Instantiate("Ball", Vector3.zero, Quaternion.identity);
+        connectedToServer.Invoke();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
