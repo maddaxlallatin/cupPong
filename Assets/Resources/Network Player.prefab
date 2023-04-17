@@ -155,6 +155,8 @@ MonoBehaviour:
   - {fileID: 9191088471246264550}
   - {fileID: 6454428027814736107}
   - {fileID: 4022389043512090354}
+  - {fileID: 5847192611468241574}
+  - {fileID: 1329503954548251299}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -173,6 +175,8 @@ MonoBehaviour:
   networkHead: {fileID: 3190648724650837617}
   networkLeftHand: {fileID: 4590999542008053945}
   networkRightHand: {fileID: 7040069411034931976}
+  leftHandAnimator: {fileID: 8581909023240667986}
+  rightHandAnimator: {fileID: 5834249472810809173}
 --- !u!1 &3190648724650837617
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +399,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2170275512132398353}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5834249472803374307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+    type: 3}
+  m_PrefabInstance: {fileID: 2170275512132398353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1329503954548251299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834249472803374307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 2
+    Name: Grip
+  - Type: 1
+    SynchronizeType: 2
+    Name: Trigger
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!95 &5834249472810809173 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5686134208192617028, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+    type: 3}
+  m_PrefabInstance: {fileID: 2170275512132398353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8547227939142990073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,9 +509,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+--- !u!1 &8581909023231291620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8547227939142990073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5847192611468241574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581909023231291620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 2
+    Name: Grip
+  - Type: 1
+    SynchronizeType: 2
+    Name: Trigger
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!4 &8581909023231323268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8547227939142990073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8581909023240667986 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 109434732388006827, guid: 65847589f926b734d9eaed6e25f0046b,
     type: 3}
   m_PrefabInstance: {fileID: 8547227939142990073}
   m_PrefabAsset: {fileID: 0}

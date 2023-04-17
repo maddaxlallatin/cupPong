@@ -31,6 +31,7 @@ public class SpawnManager : MonoBehaviour
         {
             Debug.Log("Found more than one left hand!");
         }
+        
         if (!ConnectedToServer && device.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerValue) && triggerValue == true && pressed == false)
         {
             pressed = true;
@@ -40,6 +41,8 @@ public class SpawnManager : MonoBehaviour
         if(device.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerValue2) && triggerValue2 == false){
             pressed = false;
         }
+        
+        
     }
 
     public void SpawnBall()

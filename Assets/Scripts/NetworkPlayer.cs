@@ -18,6 +18,8 @@ public class NetworkPlayer : MonoBehaviour
     private GameObject localRightHand;
     public GameObject networkRightHand;
     private PhotonView PV;
+    public Animator leftHandAnimator;
+    public Animator rightHandAnimator;
     
     private void Awake()
     {
@@ -30,10 +32,42 @@ public class NetworkPlayer : MonoBehaviour
         if (localRightHand == null)
             localRightHand = GameObject.FindWithTag("Local Right Hand");
 
+        
+
+    }
+
+    void UpdateHandAnimation(InputDevice targetDevice, Animator handAnimator)
+    {
+        Debug.Log("UpdateHandAnimation");
+        if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+        {
+            Debug.Log("triggerValue: " + triggerValue);
+            handAnimator.SetFloat("Trigger", triggerValue);
+        }
+        else
+        {
+            handAnimator.SetFloat("Trigger", 0);
+        }
+
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
+        {
+            Debug.Log("gripValue: " + gripValue);
+            handAnimator.SetFloat("Grip", gripValue);
+        }
+        else
+        {
+            handAnimator.SetFloat("Grip", 0);
+        }
     }
     void Start()
     {
         PV = GetComponent<PhotonView>();
+        if(PV.IsMine){
+            foreach (var item in GetComponentsInChildren<Renderer>())
+        {
+            item.enabled = false;
+        }
+        }
     }
 
     // Update is called once per frame
@@ -41,9 +75,9 @@ public class NetworkPlayer : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            networkLeftHand.gameObject.SetActive(false);
-            networkRightHand.gameObject.SetActive(false);
-            networkHead.gameObject.SetActive(false);
+            
+
+
             networkHead.transform.position = localHead.transform.position;
             networkHead.transform.rotation = localHead.transform.rotation;
 
@@ -54,6 +88,10 @@ public class NetworkPlayer : MonoBehaviour
             //Right Hand
             networkRightHand.transform.position = localRightHand.transform.position;
             networkRightHand.transform.rotation = localRightHand.transform.rotation;
+
+            Debug.Log(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand));
+            UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand), leftHandAnimator);
+            UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.RightHand), rightHandAnimator);
         }
 
     }
