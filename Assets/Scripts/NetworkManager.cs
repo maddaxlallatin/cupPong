@@ -9,9 +9,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private GameObject joinRoomButton;
     private GameObject createRoomButton;
     private GameObject lobbyUI;
-    public  UnityEvent connectedToServer;
+    public UnityEvent connectedToServer;
+    public UnityEvent ballPickedUp;
+    public bool isPickedUp = false;
     // Start is called before the first frame update
-    void Awake(){
+    void Awake()
+    {
         joinRoomButton = GameObject.FindWithTag("joinRoomButton");
         createRoomButton = GameObject.FindWithTag("createRoomButton");
         lobbyUI = GameObject.FindWithTag("lobbyUI");
@@ -36,8 +39,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         createRoomButton.SetActive(true);
 
 
-      //  PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
-                base.OnConnectedToMaster();
+        //  PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
+        base.OnConnectedToMaster();
 
     }
 
@@ -55,5 +58,5 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnPlayerEnteredRoom(newPlayer);
     }
 
-
+   
 }

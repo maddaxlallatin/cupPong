@@ -38,10 +38,9 @@ public class NetworkPlayer : MonoBehaviour
 
     void UpdateHandAnimation(InputDevice targetDevice, Animator handAnimator)
     {
-        Debug.Log("UpdateHandAnimation");
+        if(PV.IsMine){
         if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
-            Debug.Log("triggerValue: " + triggerValue);
             handAnimator.SetFloat("Trigger", triggerValue);
         }
         else
@@ -51,12 +50,12 @@ public class NetworkPlayer : MonoBehaviour
 
         if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
         {
-            Debug.Log("gripValue: " + gripValue);
             handAnimator.SetFloat("Grip", gripValue);
         }
         else
         {
             handAnimator.SetFloat("Grip", 0);
+        }
         }
     }
     void Start()
@@ -65,7 +64,7 @@ public class NetworkPlayer : MonoBehaviour
         if(PV.IsMine){
             foreach (var item in GetComponentsInChildren<Renderer>())
         {
-            item.enabled = false;
+           // item.enabled = false;
         }
         }
     }
@@ -89,7 +88,6 @@ public class NetworkPlayer : MonoBehaviour
             networkRightHand.transform.position = localRightHand.transform.position;
             networkRightHand.transform.rotation = localRightHand.transform.rotation;
 
-            Debug.Log(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand));
             UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand), leftHandAnimator);
             UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.RightHand), rightHandAnimator);
         }

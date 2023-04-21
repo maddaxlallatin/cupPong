@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class NetworkBall : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -15,4 +14,6 @@ public class NetworkBall : MonoBehaviour
     {
         
     }
+    
+
 }
