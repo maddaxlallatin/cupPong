@@ -1,4 +1,4 @@
-Library: C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
+Library: C:\Users\madda\github\unity\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-14
 --target=ARMV8A_AARCH64
@@ -101,6 +101,11 @@ Library: C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_b
 --compilation-defines=NET_STANDARD_2_1
 --compilation-defines=NETSTANDARD
 --compilation-defines=NETSTANDARD2_1
+--compilation-defines=DEVELOPMENT_BUILD
+--compilation-defines=ENABLE_PROFILER
+--compilation-defines=DEBUG
+--compilation-defines=TRACE
+--compilation-defines=UNITY_ASSERTIONS
 --compilation-defines=UNITY_PRO_LICENSE
 --compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
 --compilation-defines=ENABLE_DIRECTOR
@@ -121,14 +126,14 @@ Library: C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_b
 --compilation-defines=PHYSICS2D_MODULE_PRESENT
 --compilation-defines=CSHARP_7_OR_LATER
 --compilation-defines=CSHARP_7_3_OR_NEWER
---compilation-defines=ENABLE_VR_MODULE
---compilation-defines=ENABLE_XR_MODULE
---compilation-defines=ENABLE_INPUT_SYSTEM_PACKAGE
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
 --compilation-defines=PACKAGE_ANIMATION
 --compilation-defines=PACKAGE_UITOOLKIT
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
+--compilation-defines=ENABLE_INPUT_SYSTEM_PACKAGE
 --compilation-defines=DISABLE_BUILTIN_INPUT_SYSTEM_OCULUS
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_XR
@@ -155,8 +160,9 @@ Library: C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_b
 --compilation-defines=INPUT_SYSTEM_POSE_VALID
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\UnityProjects\cupPong\Temp\Burst
---output=C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
+--temp-folder=C:\Users\madda\github\unity\cupPong\Temp\Burst
+--debug=Full
+--output=C:\Users\madda\github\unity\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
