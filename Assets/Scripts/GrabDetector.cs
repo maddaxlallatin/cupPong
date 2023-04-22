@@ -5,8 +5,8 @@ public class GrabDetector : MonoBehaviourPunCallbacks
 {
     private XRGrabInteractable grabInteractable;
     private Rigidbody _rigidbody;
-    public bool isPickedUp;
-    
+    private bool isPickedUp;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -39,23 +39,26 @@ public class GrabDetector : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        //Debug.Log(isPickedUp);
-        if(!this.photonView.IsMine){
-            //Debug.Log("Is not mine");
+        Debug.Log(isPickedUp);
+        if (!this.photonView.IsMine)
+        {
+            if (isPickedUp)
+            {
+                _rigidbody.isKinematic = true;
+                _rigidbody.useGravity = false;
+            }
+            else
+            {
+                _rigidbody.isKinematic = false;
+                _rigidbody.useGravity = true;
+            }
         }
-        /* if(isPickedUp){
-            _rigidbody.isKinematic = true;
-        _rigidbody.useGravity = false;
-        } else { 
-            _rigidbody.isKinematic = false;
-            _rigidbody.useGravity = true;
-        }*/
     }
     [PunRPC]
     void BallPickedUp(bool someValue)
     {
         Debug.Log(someValue);
-//          isPickedUp = someValue;
+        isPickedUp = someValue;
     }
 
 }
