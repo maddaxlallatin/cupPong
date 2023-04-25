@@ -49,11 +49,11 @@ public class SpawnManager : MonoBehaviour
     {
         if (ConnectedToServer)
         {
-            PhotonNetwork.Instantiate("Ball", new Vector3(0, 0, 0), Quaternion.identity);
+            //PhotonNetwork.Instantiate("Ball", new Vector3(0, 0, 0), Quaternion.identity);
         }
         else
         {
-            Instantiate(ballPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+           // Instantiate(ballPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         }
     }
 

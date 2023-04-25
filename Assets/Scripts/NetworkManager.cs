@@ -9,6 +9,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private GameObject joinRoomButton;
     private GameObject createRoomButton;
     private GameObject lobbyUI;
+    private GameObject Player;
     public UnityEvent connectedToServer;
     public UnityEvent ballPickedUp;
     public bool isPickedUp = false;
@@ -18,6 +19,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         joinRoomButton = GameObject.FindWithTag("joinRoomButton");
         createRoomButton = GameObject.FindWithTag("createRoomButton");
         lobbyUI = GameObject.FindWithTag("lobbyUI");
+        Player = GameObject.FindWithTag("Player");
     }
     void Start()
     {
@@ -48,8 +50,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined room");
         base.OnJoinedRoom();
-        lobbyUI.SetActive(false);
+       lobbyUI.SetActive(false);
         connectedToServer.Invoke();
+        if(PhotonNetwork.PlayerList.Length > 1){
+        Player.transform.position = new Vector3(0.085f, 0f, -1.8f);
+        Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        
+
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)

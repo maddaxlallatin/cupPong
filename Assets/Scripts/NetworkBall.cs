@@ -18,6 +18,7 @@ public class NetworkBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isPickedUp);
         if (!photonView.IsMine)
         {
             if (isPickedUp)
@@ -47,7 +48,6 @@ public class NetworkBall : MonoBehaviour
     [PunRPC]
     void BallPickedUp(bool someValue)
     {
-        //Debug.Log(someValue);
         isPickedUp = someValue;
     }
 }

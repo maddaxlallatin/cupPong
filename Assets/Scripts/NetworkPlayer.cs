@@ -26,11 +26,7 @@ public class NetworkPlayer : MonoBehaviour
         if (localHead == null)
             localHead = GameObject.FindWithTag("Local Head");
 
-        if (localLeftHand == null)
-            localLeftHand = GameObject.FindWithTag("Local Left Hand");
-
-        if (localRightHand == null)
-            localRightHand = GameObject.FindWithTag("Local Right Hand");
+        
 
         
 
@@ -72,6 +68,11 @@ public class NetworkPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (localLeftHand == null)
+            localLeftHand = GameObject.FindWithTag("Local Left Hand");
+
+        if (localRightHand == null)
+            localRightHand = GameObject.FindWithTag("Local Right Hand");
         if (PV.IsMine)
         {
             
