@@ -10,6 +10,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private GameObject createRoomButton;
     private GameObject lobbyUI;
     private GameObject Player;
+    private GameObject ReadyUpButton;
     public UnityEvent connectedToServer;
     public UnityEvent ballPickedUp;
     public bool isPickedUp = false;
@@ -20,11 +21,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         createRoomButton = GameObject.FindWithTag("createRoomButton");
         lobbyUI = GameObject.FindWithTag("lobbyUI");
         Player = GameObject.FindWithTag("Player");
+        ReadyUpButton = GameObject.FindWithTag("ReadyUp");
     }
     void Start()
     {
         joinRoomButton.SetActive(false);
         createRoomButton.SetActive(false);
+        ReadyUpButton.SetActive(false);
         ConnectToServer();
     }
 
@@ -50,21 +53,24 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined room");
         base.OnJoinedRoom();
-       lobbyUI.SetActive(false);
+        lobbyUI.SetActive(false);
         connectedToServer.Invoke();
-        if(PhotonNetwork.PlayerList.Length > 1){
-        Player.transform.position = new Vector3(0.085f, 0f, -1.8f);
-        Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (PhotonNetwork.CurrentRoom.PlayerCount> 1)
+        {
+            ReadyUpButton.SetActive(true);
+            Player.transform.position = new Vector3(0.085f, 0f, -1.8f);
+            Player.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        
+
 
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
+        ReadyUpButton.SetActive(true);
         Debug.Log("Player entered room");
         base.OnPlayerEnteredRoom(newPlayer);
     }
 
-   
+
 }

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 51869378}
   - component: {fileID: 51869377}
   - component: {fileID: 51869376}
-  - component: {fileID: 51869379}
   m_Layer: 0
   m_Name: cup (1)
   m_TagString: Untagged
@@ -223,22 +222,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51869373}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &51869379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51869373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &95779827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1112,6 @@ GameObject:
   - component: {fileID: 133683866}
   - component: {fileID: 133683865}
   - component: {fileID: 133683864}
-  - component: {fileID: 133683867}
   m_Layer: 0
   m_Name: cup (4)
   m_TagString: Untagged
@@ -1217,22 +1199,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133683861}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &133683867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133683861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &150700204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.085, y: -0.109}
+  m_AnchoredPosition: {x: -0.55, y: -0.33}
   m_SizeDelta: {x: 25.41, y: 11.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280693591
@@ -1689,8 +1655,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2120629631}
         m_TargetAssemblyTypeName: RoundManager, Assembly-CSharp
-        m_MethodName: nextRound
-        m_Mode: 5
+        m_MethodName: clientReadyUp
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1746,6 +1712,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2032994378}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &280693592
 MonoBehaviour:
@@ -3352,7 +3330,6 @@ GameObject:
   - component: {fileID: 491481645}
   - component: {fileID: 491481644}
   - component: {fileID: 491481643}
-  - component: {fileID: 491481646}
   m_Layer: 0
   m_Name: cup (9)
   m_TagString: Untagged
@@ -3440,22 +3417,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491481640}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &491481646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491481640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &578805023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,7 +3699,6 @@ GameObject:
   - component: {fileID: 610155918}
   - component: {fileID: 610155917}
   - component: {fileID: 610155916}
-  - component: {fileID: 610155919}
   m_Layer: 0
   m_Name: cup (3)
   m_TagString: Untagged
@@ -3826,22 +3786,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610155913}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &610155919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610155913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &648338182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,7 +4090,6 @@ GameObject:
   - component: {fileID: 839717853}
   - component: {fileID: 839717852}
   - component: {fileID: 839717851}
-  - component: {fileID: 839717854}
   m_Layer: 0
   m_Name: cup (6)
   m_TagString: Untagged
@@ -4234,22 +4177,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839717848}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &839717854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839717848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &857867551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,7 +4189,6 @@ GameObject:
   - component: {fileID: 857867556}
   - component: {fileID: 857867555}
   - component: {fileID: 857867554}
-  - component: {fileID: 857867557}
   m_Layer: 0
   m_Name: cup (7)
   m_TagString: Untagged
@@ -4350,22 +4276,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857867551}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &857867557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857867551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &870442377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,7 +5060,6 @@ GameObject:
   - component: {fileID: 973940541}
   - component: {fileID: 973940539}
   - component: {fileID: 973940538}
-  - component: {fileID: 973940543}
   m_Layer: 0
   m_Name: cup
   m_TagString: Untagged
@@ -5251,22 +5160,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973940536}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &973940543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973940536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1045058685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,7 +6260,6 @@ Transform:
   m_Children:
   - {fileID: 648338183}
   - {fileID: 1862195852}
-  - {fileID: 2032994383}
   - {fileID: 1768169042}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -7613,7 +7505,6 @@ GameObject:
   - component: {fileID: 1458877477}
   - component: {fileID: 1458877476}
   - component: {fileID: 1458877475}
-  - component: {fileID: 1458877478}
   m_Layer: 0
   m_Name: cup (8)
   m_TagString: Untagged
@@ -7701,22 +7592,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458877472}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &1458877478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458877472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1541631803
 GameObject:
   m_ObjectHideFlags: 0
@@ -9259,7 +9134,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1168051373}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1768169043
 MonoBehaviour:
@@ -9664,6 +9539,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1673679715}
+  - {fileID: 2032994383}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -9945,7 +9821,6 @@ GameObject:
   - component: {fileID: 1959863712}
   - component: {fileID: 1959863711}
   - component: {fileID: 1959863710}
-  - component: {fileID: 1959863713}
   m_Layer: 0
   m_Name: cup (5)
   m_TagString: Untagged
@@ -10033,22 +9908,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959863707}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &1959863713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959863707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1967566470
 GameObject:
   m_ObjectHideFlags: 0
@@ -10410,7 +10269,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006894094}
-  - component: {fileID: 2006894095}
   m_Layer: 0
   m_Name: Cups (1)
   m_TagString: Untagged
@@ -10443,47 +10301,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2006894095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006894093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 973940543}
-  - {fileID: 51869379}
-  - {fileID: 2123856143}
-  - {fileID: 610155919}
-  - {fileID: 133683867}
-  - {fileID: 1959863713}
-  - {fileID: 839717854}
-  - {fileID: 857867557}
-  - {fileID: 1458877478}
-  - {fileID: 491481646}
-  - {fileID: 1298514827}
-  - {fileID: 95779831}
-  - {fileID: 408399112}
-  - {fileID: 891784984}
-  - {fileID: 899653878}
-  - {fileID: 1978471003}
-  - {fileID: 903025105}
-  - {fileID: 355639640}
-  - {fileID: 1967566474}
-  sceneViewId: 1
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &2019283448
 GameObject:
   m_ObjectHideFlags: 0
@@ -10598,7 +10415,7 @@ GameObject:
   - component: {fileID: 2032994379}
   m_Layer: 5
   m_Name: Ready Up
-  m_TagString: Untagged
+  m_TagString: ReadyUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10690,18 +10507,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032994378}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.042795062}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.46}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 280693590}
-  m_Father: {fileID: 1168051373}
-  m_RootOrder: 2
+  m_Father: {fileID: 1840788821}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5613558, y: -1.7352715}
+  m_AnchoredPosition: {x: 0.14499998, y: 1.03}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2058562159
@@ -11182,6 +10999,7 @@ GameObject:
   - component: {fileID: 2120629628}
   - component: {fileID: 2120629630}
   - component: {fileID: 2120629631}
+  - component: {fileID: 2120629632}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -11243,6 +11061,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConnectedToServer: 0
+--- !u!114 &2120629632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120629627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2123856137
 GameObject:
   m_ObjectHideFlags: 0
@@ -11255,7 +11095,6 @@ GameObject:
   - component: {fileID: 2123856142}
   - component: {fileID: 2123856141}
   - component: {fileID: 2123856140}
-  - component: {fileID: 2123856143}
   m_Layer: 0
   m_Name: cup (2)
   m_TagString: Untagged
@@ -11343,22 +11182,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123856137}
   m_Mesh: {fileID: -5076798556035486163, guid: 329267d14e3b06a439ffe253cd02d18e, type: 3}
---- !u!114 &2123856143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123856137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &2133497783
 GameObject:
   m_ObjectHideFlags: 0
