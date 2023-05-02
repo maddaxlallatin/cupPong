@@ -7,7 +7,7 @@ public class RoundManager : MonoBehaviour
     // Start is called before the first frame update
     public bool ConnectedToServer = false;
     private Vector3 redBallPos = new Vector3(0.5f, 0.785f, 1.5f);
-    private Vector3 blueBallPos = new Vector3(-0.345f, 0.78f, -1.4f);
+    private Vector3 blueBallPos = new Vector3(0.5f, 0.78f, -1.5f);
     private int readyUp = 0;
     private int ballsSpawned = 0;
     private int currentBalls = 0;
@@ -24,11 +24,10 @@ public class RoundManager : MonoBehaviour
         if (readyUp == 2 && !gameStarted)
         {
             nextRound(currentTurn);
-            currentTurn = "blue";
-            currentBalls++;
-            ballsSpawned++;
+
             gameStarted = true;
         }
+        
 
     }
     public void SetConnectedToServer(bool connected)
@@ -40,10 +39,12 @@ public class RoundManager : MonoBehaviour
 
     public void nextRound(string whosTurn)
     {
-
+        currentBalls++;
+        ballsSpawned++;
 
         switch (whosTurn)
         {
+
             case "red":
                 if (PhotonNetwork.CurrentRoom.MasterClientId != PhotonNetwork.LocalPlayer.ActorNumber)
                 {
@@ -78,11 +79,11 @@ public class RoundManager : MonoBehaviour
 
     [PunRPC]
     public void ballDestroyed()
-    {
-        currentBalls--;
-        if (currentBalls == 0 && ballsSpawned ==2)
+    {   
+        
+        currentBalls = 0;
+        if (currentBalls == 0 && ballsSpawned == 2)
         {
-            nextRound(currentTurn);
             if (currentTurn == "red")
             {
                 currentTurn = "blue";
@@ -91,6 +92,12 @@ public class RoundManager : MonoBehaviour
             {
                 currentTurn = "red";
             }
+            ballsSpawned = 0;
+            nextRound(currentTurn);
+        }
+        if (currentBalls == 0 && ballsSpawned == 1)
+        {
+            nextRound(currentTurn);
         }
     }
 

@@ -7,18 +7,19 @@ public class NetworkBall : MonoBehaviour
     private bool isPickedUp = false;
     private Rigidbody _rigidbody;
     private PhotonView photonView;
+    private PhotonView PV;
     // Start is called before the first frame update
     void Start()
     {
         photonView = GetComponent<PhotonView>();
         _rigidbody = GetComponent<Rigidbody>();
+        PV = GameObject.FindWithTag("ScriptManager").GetComponent<PhotonView>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isPickedUp);
         if (!photonView.IsMine)
         {
             if (isPickedUp)
@@ -31,6 +32,14 @@ public class NetworkBall : MonoBehaviour
                 _rigidbody.isKinematic = false;
                 _rigidbody.useGravity = true;
             }
+        }
+        if(gameObject.transform.position.y < 0.3f){
+                                Debug.Log("Ball Destroyed");
+
+                if(photonView.IsMine){
+                PV.RPC("ballDestroyed", RpcTarget.All);
+                PhotonNetwork.Destroy(gameObject);
+                }
         }
     }
 

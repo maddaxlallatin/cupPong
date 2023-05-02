@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 95779828}
   - component: {fileID: 95779830}
   - component: {fileID: 95779829}
-  - component: {fileID: 95779831}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -296,22 +295,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &95779831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95779827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &100792891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1464,7 @@ GameObject:
   - component: {fileID: 242283238}
   - component: {fileID: 242283237}
   m_Layer: 0
-  m_Name: cup (8)
+  m_Name: redcup (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2567,7 +2550,6 @@ GameObject:
   - component: {fileID: 355639637}
   - component: {fileID: 355639639}
   - component: {fileID: 355639638}
-  - component: {fileID: 355639640}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -2630,22 +2612,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &355639640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355639636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &376152926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,7 +2625,7 @@ GameObject:
   - component: {fileID: 376152930}
   - component: {fileID: 376152929}
   m_Layer: 0
-  m_Name: cup (6)
+  m_Name: redcup (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2890,7 +2856,6 @@ GameObject:
   - component: {fileID: 408399109}
   - component: {fileID: 408399111}
   - component: {fileID: 408399110}
-  - component: {fileID: 408399112}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -2953,22 +2918,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &408399112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408399108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,7 +3046,7 @@ GameObject:
   - component: {fileID: 427481684}
   - component: {fileID: 427481683}
   m_Layer: 0
-  m_Name: cup (7)
+  m_Name: redcup (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4289,7 +4238,7 @@ GameObject:
   - component: {fileID: 870442381}
   - component: {fileID: 870442380}
   m_Layer: 0
-  m_Name: cup (3)
+  m_Name: redcup (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4520,7 +4469,6 @@ GameObject:
   - component: {fileID: 891784981}
   - component: {fileID: 891784983}
   - component: {fileID: 891784982}
-  - component: {fileID: 891784984}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -4583,22 +4531,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &891784984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891784980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &899653874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4610,7 +4542,6 @@ GameObject:
   - component: {fileID: 899653875}
   - component: {fileID: 899653877}
   - component: {fileID: 899653876}
-  - component: {fileID: 899653878}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -4673,22 +4604,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &899653878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899653874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &903025101
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,7 +4615,6 @@ GameObject:
   - component: {fileID: 903025102}
   - component: {fileID: 903025104}
   - component: {fileID: 903025103}
-  - component: {fileID: 903025105}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -4763,22 +4677,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &903025105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903025101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &944162393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,7 +6310,7 @@ GameObject:
   - component: {fileID: 1293670450}
   - component: {fileID: 1293670449}
   m_Layer: 0
-  m_Name: cup (1)
+  m_Name: redcup (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6509,7 +6407,6 @@ GameObject:
   - component: {fileID: 1298514824}
   - component: {fileID: 1298514826}
   - component: {fileID: 1298514825}
-  - component: {fileID: 1298514827}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -6572,22 +6469,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &1298514827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298514823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1308236771
 GameObject:
   m_ObjectHideFlags: 0
@@ -9534,7 +9415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840788819}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.085, y: 0, z: 1.8}
+  m_LocalPosition: {x: 0.085, y: 0.25, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9919,7 +9800,6 @@ GameObject:
   - component: {fileID: 1967566471}
   - component: {fileID: 1967566473}
   - component: {fileID: 1967566472}
-  - component: {fileID: 1967566474}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -9982,22 +9862,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &1967566474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967566470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &1968001551
 GameObject:
   m_ObjectHideFlags: 0
@@ -10084,7 +9948,7 @@ GameObject:
   - component: {fileID: 1969750962}
   - component: {fileID: 1969750961}
   m_Layer: 0
-  m_Name: cup (5)
+  m_Name: redcup (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10181,7 +10045,6 @@ GameObject:
   - component: {fileID: 1978471000}
   - component: {fileID: 1978471002}
   - component: {fileID: 1978471001}
-  - component: {fileID: 1978471003}
   m_Layer: 0
   m_Name: Ball Collider
   m_TagString: Untagged
@@ -10244,22 +10107,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0122384, y: 0.5, z: 0.012477872}
   m_Center: {x: -0.0006292353, y: 0.2, z: -0.00047632706}
---- !u!114 &1978471003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978470999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &2006894093
 GameObject:
   m_ObjectHideFlags: 0
@@ -10314,7 +10161,7 @@ GameObject:
   - component: {fileID: 2019283452}
   - component: {fileID: 2019283451}
   m_Layer: 0
-  m_Name: cup (2)
+  m_Name: redcup (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10534,7 +10381,7 @@ GameObject:
   - component: {fileID: 2058562163}
   - component: {fileID: 2058562162}
   m_Layer: 0
-  m_Name: cup (9)
+  m_Name: redcup (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10767,7 +10614,7 @@ GameObject:
   - component: {fileID: 2080770055}
   - component: {fileID: 2080770054}
   m_Layer: 0
-  m_Name: cup (4)
+  m_Name: redcup (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11000,9 +10847,10 @@ GameObject:
   - component: {fileID: 2120629630}
   - component: {fileID: 2120629631}
   - component: {fileID: 2120629632}
+  - component: {fileID: 2120629633}
   m_Layer: 0
   m_Name: ScriptManager
-  m_TagString: Untagged
+  m_TagString: ScriptManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11083,6 +10931,18 @@ MonoBehaviour:
   sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2120629633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120629627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113f216d6abc09843a645275b03f3213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2123856137
 GameObject:
   m_ObjectHideFlags: 0
@@ -12379,7 +12239,7 @@ GameObject:
   - component: {fileID: 6003600807810190876}
   - component: {fileID: 8409879021908048601}
   m_Layer: 0
-  m_Name: cup
+  m_Name: redcup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
