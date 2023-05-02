@@ -8,12 +8,15 @@ public class NetworkBall : MonoBehaviour
     private Rigidbody _rigidbody;
     private PhotonView photonView;
     private PhotonView PV;
+                private AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
     {
         photonView = GetComponent<PhotonView>();
         _rigidbody = GetComponent<Rigidbody>();
         PV = GameObject.FindWithTag("ScriptManager").GetComponent<PhotonView>();
+        sound = GetComponent<AudioSource>();
 
     }
 
@@ -53,10 +56,18 @@ public class NetworkBall : MonoBehaviour
     {
         photonView.RequestOwnership();
     }
+    void OnCollisionEnter(Collision other) {
+    
+
+        sound.Play(0);
+    
+
+    }
 
     [PunRPC]
     void BallPickedUp(bool someValue)
     {
         isPickedUp = someValue;
     }
+    
 }

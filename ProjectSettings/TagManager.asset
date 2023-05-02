@@ -16,6 +16,8 @@ TagManager:
   - player
   - ReadyUp
   - ScriptManager
+  - Bouncy
+  - NoBounce
   layers:
   - Default
   - TransparentFX
@@ -26,8 +28,8 @@ TagManager:
   - Local Head
   - Local Left Hand
   - Local Right Hand
-  - 
-  - 
+  - Bouncy
+  - NoBounce
   - 
   - 
   - 
