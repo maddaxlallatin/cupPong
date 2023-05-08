@@ -11,6 +11,7 @@ public class RoundManager : MonoBehaviour
     private int readyUp = 0;
     private int ballsSpawned = 0;
     private int currentBalls = 0;
+    private int streakInt = 0;
     private string currentTurn = "red";
     bool gameStarted = false;
     void Start()
@@ -41,7 +42,6 @@ public class RoundManager : MonoBehaviour
     {
         currentBalls++;
         ballsSpawned++;
-
         switch (whosTurn)
         {
 
@@ -84,7 +84,13 @@ public class RoundManager : MonoBehaviour
         currentBalls = 0;
         if (currentBalls == 0 && ballsSpawned == 2)
         {
-            if (currentTurn == "red")
+            if(streakInt == 2){
+                ballsSpawned = 0;
+                streakInt = 0;
+                nextRound(currentTurn);
+                return;
+            } 
+             else if (currentTurn == "red")
             {
                 currentTurn = "blue";
             }
@@ -99,6 +105,18 @@ public class RoundManager : MonoBehaviour
         {
             nextRound(currentTurn);
         }
+        Debug.Log("Current Balls: " + currentBalls + " Balls Spawned: " + ballsSpawned + " Current streak: " + streakInt);
+
+    }
+
+    [PunRPC]
+    public void streakCounter(bool toINC){
+        if(toINC == true){
+            streakInt++;
+        } else {
+            streakInt = 0;
+        }
+
     }
 
 

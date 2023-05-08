@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Photon.Pun;
+using Photon.Realtime;
 public class BallTrigger : MonoBehaviour
 {
     private PhotonView PV;
@@ -16,10 +17,19 @@ public class BallTrigger : MonoBehaviour
     {
         if (other.CompareTag("ball"))
         {
+            if(!PhotonNetwork.InRoom){
+                if( gameObject.transform.parent.name.Contains("red")){
+                gameObject.transform.parent.transform.position = new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z);
+            } else {
+                 gameObject.transform.parent.transform.position = new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z);
+            }
+            Destroy(gameObject.transform.parent);
+            }
             if (other.gameObject.GetComponent<PhotonView>().IsMine)
             {
 
                 PV.RPC("moveCup", RpcTarget.All, gameObject.transform.parent.name);
+                PV.RPC("streakCounter", RpcTarget.All, true);
                 PV.RPC("ballDestroyed", RpcTarget.All);
                 PhotonNetwork.Destroy(other.gameObject);
 

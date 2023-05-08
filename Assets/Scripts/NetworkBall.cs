@@ -8,7 +8,8 @@ public class NetworkBall : MonoBehaviour
     private Rigidbody _rigidbody;
     private PhotonView photonView;
     private PhotonView PV;
-                private AudioSource sound;
+    private AudioSource sound;
+    private bool objectFirstCollision = true;
 
     // Start is called before the first frame update
     void Start()
@@ -36,13 +37,16 @@ public class NetworkBall : MonoBehaviour
                 _rigidbody.useGravity = true;
             }
         }
-        if(gameObject.transform.position.y < 0.3f){
-                                Debug.Log("Ball Destroyed");
+        if (gameObject.transform.position.y < 0.3f)
+        {
+            Debug.Log("Ball Destroyed");
 
-                if(photonView.IsMine){
+            if (photonView.IsMine)
+            {
                 PV.RPC("ballDestroyed", RpcTarget.All);
                 PhotonNetwork.Destroy(gameObject);
-                }
+                PV.RPC("streakCounter", RpcTarget.All, false);
+            }
         }
     }
 
@@ -56,11 +60,16 @@ public class NetworkBall : MonoBehaviour
     {
         photonView.RequestOwnership();
     }
-    void OnCollisionEnter(Collision other) {
-    
+    void OnCollisionEnter(Collision other)
+    {
 
+        if (objectFirstCollision)
+        {
+            objectFirstCollision = false;
+            return;
+        }
         sound.Play(0);
-    
+
 
     }
 
@@ -69,5 +78,5 @@ public class NetworkBall : MonoBehaviour
     {
         isPickedUp = someValue;
     }
-    
+
 }

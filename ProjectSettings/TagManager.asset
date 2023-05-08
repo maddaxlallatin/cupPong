@@ -18,6 +18,7 @@ TagManager:
   - ScriptManager
   - Bouncy
   - NoBounce
+  - leaveRoomButton
   layers:
   - Default
   - TransparentFX

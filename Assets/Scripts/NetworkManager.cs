@@ -8,6 +8,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     private GameObject joinRoomButton;
     private GameObject createRoomButton;
+    private GameObject leaveRoomButton;
     private GameObject lobbyUI;
     private GameObject Player;
     private GameObject ReadyUpButton;
@@ -19,6 +20,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         joinRoomButton = GameObject.FindWithTag("joinRoomButton");
         createRoomButton = GameObject.FindWithTag("createRoomButton");
+        leaveRoomButton = GameObject.FindWithTag("leaveRoomButton");
         lobbyUI = GameObject.FindWithTag("lobbyUI");
         Player = GameObject.FindWithTag("Player");
         ReadyUpButton = GameObject.FindWithTag("ReadyUp");
@@ -27,7 +29,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         joinRoomButton.SetActive(false);
         createRoomButton.SetActive(false);
+        leaveRoomButton.SetActive(false);
         ReadyUpButton.SetActive(false);
+        
         ConnectToServer();
     }
 
@@ -54,12 +58,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room");
         base.OnJoinedRoom();
         lobbyUI.SetActive(false);
+        leaveRoomButton.SetActive(true);
         connectedToServer.Invoke();
         if (PhotonNetwork.CurrentRoom.PlayerCount> 1)
         {
             ReadyUpButton.SetActive(true);
             Player.transform.position = new Vector3(0.085f, 0f, -1.8f);
             Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        } else { 
+                        Player.transform.rotation = Quaternion.Euler(0, 180, 0);
+
         }
 
 

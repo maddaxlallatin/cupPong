@@ -57,4 +57,8 @@ public class NumberPress : MonoBehaviour
         PhotonNetwork.JoinRoom(codeText.text);
         codeText.text = "Joining Room...";
     }
+
+    public void leaveRoom(){
+        PhotonNetwork.LeaveRoom();
+    }
 }
