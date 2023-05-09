@@ -17,13 +17,13 @@ public class BallTrigger : MonoBehaviour
     {
         if (other.CompareTag("ball"))
         {
-            if(!PhotonNetwork.InRoom){
+            if(!PhotonNetwork.InRoom || !PhotonNetwork.IsConnected){
                 if( gameObject.transform.parent.name.Contains("red")){
                 gameObject.transform.parent.transform.position = new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z);
             } else {
                  gameObject.transform.parent.transform.position = new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z);
             }
-            Destroy(gameObject.transform.parent);
+            Destroy(gameObject.transform.parent.gameObject);
             }
             if (other.gameObject.GetComponent<PhotonView>().IsMine)
             {
