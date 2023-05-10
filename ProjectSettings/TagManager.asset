@@ -19,6 +19,7 @@ TagManager:
   - Bouncy
   - NoBounce
   - leaveRoomButton
+  - ballsBackUI
   layers:
   - Default
   - TransparentFX

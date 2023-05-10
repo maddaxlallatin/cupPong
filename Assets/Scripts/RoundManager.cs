@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Events;
+
 public class RoundManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,6 +16,7 @@ public class RoundManager : MonoBehaviour
     private int streakInt = 0;
     private string currentTurn = "red";
     bool gameStarted = false;
+    public UnityEvent ballsBack;
     void Start()
     {
 
@@ -87,6 +90,7 @@ public class RoundManager : MonoBehaviour
             if(streakInt == 2){
                 ballsSpawned = 0;
                 streakInt = 0;
+                ballsBack.Invoke();
                 nextRound(currentTurn);
                 return;
             } 

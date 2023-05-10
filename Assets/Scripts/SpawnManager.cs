@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.XR;
+using UnityEngine.Events;
 public class SpawnManager : MonoBehaviour
 {
     bool ConnectedToServer = false;
     public GameObject ballPrefab;
     bool pressed = false;
+    public UnityEvent ballsBacks;
     UnityEngine.XR.InputDevice device;
 
     // Start is called before the first frame update
@@ -54,6 +56,7 @@ public class SpawnManager : MonoBehaviour
         else
         {
            Instantiate(ballPrefab, new Vector3(0.5f, 0.785f, 1.5f), Quaternion.identity);
+           ballsBacks.Invoke();
         }
     }
 

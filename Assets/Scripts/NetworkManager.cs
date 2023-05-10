@@ -12,12 +12,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private GameObject lobbyUI;
     private GameObject Player;
     private GameObject ReadyUpButton;
+    private GameObject ballsBackUI;
     public UnityEvent connectedToServer;
     public UnityEvent ballPickedUp;
     public bool isPickedUp = false;
     // Start is called before the first frame update
     void Awake()
     {
+        ballsBackUI = GameObject.FindWithTag("ballsBackUI");
         joinRoomButton = GameObject.FindWithTag("joinRoomButton");
         createRoomButton = GameObject.FindWithTag("createRoomButton");
         leaveRoomButton = GameObject.FindWithTag("leaveRoomButton");
@@ -60,12 +62,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         lobbyUI.SetActive(false);
         leaveRoomButton.SetActive(true);
         connectedToServer.Invoke();
+        ballsBackUI.SetActive(true);
         if (PhotonNetwork.CurrentRoom.PlayerCount> 1)
         {
             ReadyUpButton.SetActive(true);
-            Player.transform.position = new Vector3(0.085f, 0f, -1.8f);
+            Player.transform.position = new Vector3(0.085f, 0.35f, -1.8f);
             Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Destroy(GameObject.Find("redSide"));
+                            ballsBackUI.SetActive(false);
+
         } else { 
+                        Destroy(GameObject.Find("blueSide"));
+                                        ballsBackUI.SetActive(false);
                         Player.transform.rotation = Quaternion.Euler(0, 180, 0);
 
         }
