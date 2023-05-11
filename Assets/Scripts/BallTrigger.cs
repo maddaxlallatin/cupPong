@@ -17,13 +17,11 @@ public class BallTrigger : MonoBehaviour
     {
         if (other.CompareTag("ball"))
         {
-            if(!PhotonNetwork.InRoom || !PhotonNetwork.IsConnected){
-                if( gameObject.transform.parent.name.Contains("red")){
-                gameObject.transform.parent.transform.position = new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z);
-            } else {
-                 gameObject.transform.parent.transform.position = new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z);
-            }
-            Destroy(gameObject.transform.parent.gameObject);
+            if (!PhotonNetwork.InRoom || !PhotonNetwork.IsConnected)
+            {
+                moveUpRight();
+
+                Destroy(other.gameObject);
             }
             if (other.gameObject.GetComponent<PhotonView>().IsMine)
             {
@@ -37,8 +35,25 @@ public class BallTrigger : MonoBehaviour
             // transform.parent.gameObject.transform.position = new Vector3((transform.parent.gameObject.transform.position.x + 0.5f), transform.parent.gameObject.transform.position.y, transform.parent.gameObject.transform.position.z);
             //  gameObject.SetActive(false);
             scoreUpdated();
+
+            void moveUpRight()
+            {
+                LeanTween.move(gameObject.transform.parent.gameObject, new Vector3((gameObject.transform.parent.transform.position.x), gameObject.transform.parent.transform.position.y + 0.25f, gameObject.transform.parent.transform.position.z), 0.5f).setEase(LeanTweenType.easeOutQuad).setOnComplete(moveRight);
+            }
+            void moveRight()
+            {
+                LeanTween.move(gameObject.transform.parent.gameObject, new Vector3((gameObject.transform.parent.transform.position.x - 0.5f), gameObject.transform.parent.transform.position.y, gameObject.transform.parent.transform.position.z), 0.5f).setEase(LeanTweenType.easeOutQuad).setOnComplete(moveDown);
+
+            }
+            void moveDown()
+            {
+                LeanTween.move(gameObject.transform.parent.gameObject, new Vector3((gameObject.transform.parent.transform.position.x), gameObject.transform.parent.transform.position.y - 0.25f, gameObject.transform.parent.transform.position.z), 0.5f).setEase(LeanTweenType.easeOutQuad);
+
+            }
         }
     }
+
+
 
     void scoreUpdated()
     {

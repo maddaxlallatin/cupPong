@@ -20,13 +20,23 @@ public class cupManager : MonoBehaviour
     [PunRPC]
     public void moveCup(string cupName){
             Debug.Log("Cup Name: " + cupName);
-            Transform cup = GameObject.Find(cupName).transform;
-            if(cupName.Contains("red")){
-                cup.position = new Vector3((cup.position.x - 0.5f), cup.position.y, cup.position.z);
-            } else {
-                cup.position = new Vector3((cup.position.x - 0.5f), cup.position.y, cup.position.z);
+            GameObject cup = GameObject.Find(cupName);
+            moveUpRight();
+            void moveUpRight()
+            {
+                LeanTween.move(cup, new Vector3((cup.transform.position.x), cup.transform.position.y + 0.25f, cup.transform.position.z), 0.5f).setEase(LeanTweenType.easeOutQuad).setOnComplete(moveRight);
             }
-            cup.GetChild(0).gameObject.SetActive(false);
+            void moveRight()
+            {
+                LeanTween.move(cup, new Vector3((cup.transform.position.x - 0.5f), cup.transform.position.y, cup.transform.position.z), 0.5f).setEase(LeanTweenType.easeOutQuad).setOnComplete(moveDown);
+
+            }
+            void moveDown()
+            {
+                LeanTween.move(cup, new Vector3((cup.transform.position.x), cup.transform.position.y - 0.25f, cup.transform.position.z), 0.5f).setEase(LeanTweenType.easeOutQuad);
+
+            }
+            cup.transform.GetChild(0).gameObject.SetActive(false);
 
     }
 }
