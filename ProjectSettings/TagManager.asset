@@ -20,6 +20,7 @@ TagManager:
   - NoBounce
   - leaveRoomButton
   - ballsBackUI
+  - gameOverUI
   layers:
   - Default
   - TransparentFX

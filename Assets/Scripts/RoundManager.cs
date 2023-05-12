@@ -122,6 +122,16 @@ public class RoundManager : MonoBehaviour
         }
 
     }
+    [PunRPC]
+    public void restartGame(){
+        gameStarted = false;
+        currentBalls = 0;
+        ballsSpawned = 0;
+        streakInt = 0;
+        currentTurn = "red";
+        readyUp = 0;
+
+    }
 
 
 

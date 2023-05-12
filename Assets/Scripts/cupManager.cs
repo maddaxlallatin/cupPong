@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Events;
 public class cupManager : MonoBehaviour
 {
     private PhotonView PV;
+    public UnityEvent updateRedScore;
+    public UnityEvent updateBlueScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,12 @@ public class cupManager : MonoBehaviour
 
     [PunRPC]
     public void moveCup(string cupName){
+        if(cupName.Contains("red")){
+            updateBlueScore.Invoke();
+        }
+        else{
+            updateRedScore.Invoke();
+        }
             Debug.Log("Cup Name: " + cupName);
             GameObject cup = GameObject.Find(cupName);
             moveUpRight();

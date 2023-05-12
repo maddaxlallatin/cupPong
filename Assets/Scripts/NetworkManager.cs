@@ -13,6 +13,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private GameObject Player;
     private GameObject ReadyUpButton;
     private GameObject ballsBackUI;
+    private GameObject gameOverUI;
     public UnityEvent connectedToServer;
     public UnityEvent ballPickedUp;
     public bool isPickedUp = false;
@@ -26,6 +27,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         lobbyUI = GameObject.FindWithTag("lobbyUI");
         Player = GameObject.FindWithTag("Player");
         ReadyUpButton = GameObject.FindWithTag("ReadyUp");
+        gameOverUI = GameObject.FindWithTag("gameOverUI");
     }
     void Start()
     {
@@ -33,7 +35,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         createRoomButton.SetActive(false);
         leaveRoomButton.SetActive(false);
         ReadyUpButton.SetActive(false);
-        
+
         ConnectToServer();
     }
 
@@ -63,18 +65,25 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         leaveRoomButton.SetActive(true);
         connectedToServer.Invoke();
         ballsBackUI.SetActive(true);
-        if (PhotonNetwork.CurrentRoom.PlayerCount> 1)
+        gameOverUI.SetActive(true);
+        if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
         {
             ReadyUpButton.SetActive(true);
             Player.transform.position = new Vector3(0.085f, 0.35f, -1.8f);
             Player.transform.rotation = Quaternion.Euler(0, 0, 0);
             Destroy(GameObject.Find("redSide"));
-                            ballsBackUI.SetActive(false);
+            Destroy(GameObject.Find("redSideGameOver"));
+            ballsBackUI.SetActive(false);
+            gameOverUI.SetActive(false);
 
-        } else { 
-                        Destroy(GameObject.Find("blueSide"));
-                                        ballsBackUI.SetActive(false);
-                        Player.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            Destroy(GameObject.Find("blueSide"));
+            Destroy(GameObject.Find("blueSideGameOver"));
+            ballsBackUI.SetActive(false);
+            gameOverUI.SetActive(false);
+            Player.transform.rotation = Quaternion.Euler(0, 180, 0);
 
         }
 
