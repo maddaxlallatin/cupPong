@@ -9,6 +9,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private GameObject joinRoomButton;
     private GameObject createRoomButton;
     private GameObject leaveRoomButton;
+    public GameObject redCups;
+    public GameObject blueCups;
     private GameObject lobbyUI;
     private GameObject Player;
     private GameObject ReadyUpButton;
@@ -59,6 +61,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        Destroy(GameObject.Find("redCups"));
+        Destroy(GameObject.Find("blueCups"));
+        Instantiate(redCups, new Vector3(-0.8226f, 1.1094f, 1.523f), Quaternion.Euler(0, 180, 0));
+        Instantiate(blueCups, new Vector3(-1.1636f, 1.1094f, -1.466f), Quaternion.Euler(0, 0, 0));
         Debug.Log("Joined room");
         base.OnJoinedRoom();
         lobbyUI.SetActive(false);
@@ -69,7 +75,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
         {
             ReadyUpButton.SetActive(true);
-            Player.transform.position = new Vector3(0.085f, 0.35f, -1.8f);
+            Player.transform.position = new Vector3(-1.0f, 0.35f, -1.8f);
             Player.transform.rotation = Quaternion.Euler(0, 0, 0);
             Destroy(GameObject.Find("redSide"));
             Destroy(GameObject.Find("redSideGameOver"));
