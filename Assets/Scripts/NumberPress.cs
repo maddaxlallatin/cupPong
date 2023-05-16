@@ -9,12 +9,18 @@ public class NumberPress : MonoBehaviour
     // Start is called before the first frame update
     private GameObject keyboard;
     private TMP_Text codeText;
+    private GameObject joinRoomButton;
+    private GameObject createRoomButton;
     void Awake(){
                 keyboard = GameObject.FindWithTag("Keyboard");
+                joinRoomButton = GameObject.FindWithTag("joinRoomButton");
+        createRoomButton = GameObject.FindWithTag("createRoomButton");
 
     }
     void Start()
     {
+        joinRoomButton.SetActive(false);
+        createRoomButton.SetActive(false);
         keyboard.SetActive(false);
         codeText = GameObject.FindWithTag("codeText").GetComponent<TMP_Text>();
     }
@@ -30,8 +36,11 @@ public class NumberPress : MonoBehaviour
         if(codeText.text.Length < 5){
         codeText.text += number;
         }
-        if(codeText.text.Length == 4){
+        if(codeText.text.Length == 5){
             //show submit button
+            joinRoomButton.SetActive(true);
+            createRoomButton.SetActive(true);
+
         }
     }
 

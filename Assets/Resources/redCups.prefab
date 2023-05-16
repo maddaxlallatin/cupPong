@@ -1108,7 +1108,7 @@ GameObject:
   - component: {fileID: 460459326325684897}
   m_Layer: 0
   m_Name: redCups
-  m_TagString: Untagged
+  m_TagString: redCups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

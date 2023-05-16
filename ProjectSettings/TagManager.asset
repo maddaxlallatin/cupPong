@@ -21,6 +21,16 @@ TagManager:
   - leaveRoomButton
   - ballsBackUI
   - gameOverUI
+  - redCups
+  - blueCups
+  - sixRedCups
+  - threeRedCups
+  - twoRedCups
+  - oneRedCup
+  - sixBlueCups
+  - threeBlueCups
+  - twoBlueCups
+  - oneBlueCup
   layers:
   - Default
   - TransparentFX

@@ -6,8 +6,7 @@ using Photon.Realtime;
 using UnityEngine.Events;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    private GameObject joinRoomButton;
-    private GameObject createRoomButton;
+    
     private GameObject leaveRoomButton;
     public GameObject redCups;
     public GameObject blueCups;
@@ -23,8 +22,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Awake()
     {
         ballsBackUI = GameObject.FindWithTag("ballsBackUI");
-        joinRoomButton = GameObject.FindWithTag("joinRoomButton");
-        createRoomButton = GameObject.FindWithTag("createRoomButton");
+        
         leaveRoomButton = GameObject.FindWithTag("leaveRoomButton");
         lobbyUI = GameObject.FindWithTag("lobbyUI");
         Player = GameObject.FindWithTag("Player");
@@ -33,8 +31,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
     void Start()
     {
-        joinRoomButton.SetActive(false);
-        createRoomButton.SetActive(false);
+        
         leaveRoomButton.SetActive(false);
         ReadyUpButton.SetActive(false);
 
@@ -50,9 +47,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to server");
-        joinRoomButton.SetActive(true);
-        createRoomButton.SetActive(true);
-
+        
 
         //  PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
         base.OnConnectedToMaster();
