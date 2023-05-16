@@ -55,7 +55,7 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-           Instantiate(ballPrefab, new Vector3(0.5f, 0.785f, 1.5f), Quaternion.identity);
+           Instantiate(ballPrefab, new Vector3(-0.5f, 0.785f, 1.5f), Quaternion.identity);
         }
     }
 
