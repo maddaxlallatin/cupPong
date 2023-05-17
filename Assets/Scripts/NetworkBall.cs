@@ -39,7 +39,6 @@ public class NetworkBall : MonoBehaviour
         }
         if (gameObject.transform.position.y < 0.3f)
         {
-            Debug.Log("Ball Destroyed");
             if(!PhotonNetwork.InRoom || !PhotonNetwork.IsConnected){
                 Destroy(gameObject);
             }

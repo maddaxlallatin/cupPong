@@ -26,12 +26,12 @@ public class ScoreCount : MonoBehaviour
     public GameObject oneBlueCup;
 
     private Vector3 sixRedPos = new Vector3(-0.8226004f, 1.1094f, 1.613f);
-    private Vector3 threeRedPos = new Vector3(-0.8226004f, 1.1094f, 1.701f);
-    private Vector3 twoRedPos = new Vector3(-0.8226004f, 1.1094f, 1.701f);
-    private Vector3 oneRedPos = new Vector3(-0.8226004f, 1.1094f, 1.8007f);
+    private Vector3 threeRedPos = new Vector3(-0.8226004f, 1.1094f, 1.7032f);
+    private Vector3 twoRedPos = new Vector3(-0.8226004f, 1.1094f, 1.7032f);
+    private Vector3 oneRedPos = new Vector3(-0.8226004f, 1.1094f, 1.795f);
     private Vector3 sixBluePos = new Vector3(-1.1636f, 1.1094f, -1.553936f);
     private Vector3 threeBluePos = new Vector3(-1.1636f, 1.1094f, -1.643f);
-    private Vector3 twoBluePos = new Vector3(-1.1636f,1.1094f, -1.6511f);
+    private Vector3 twoBluePos = new Vector3(-1.1636f, 1.1094f, -1.6511f);
     private Vector3 oneBluePos = new Vector3(-1.1636f, 1.1094f, -1.6502f);
     private Vector3 BluePos = new Vector3(-1.1636f, 1.1094f, -1.466f);
     private Vector3 RedPos = new Vector3(-0.8226004f, 1.1094f, 1.523f);
@@ -39,7 +39,6 @@ public class ScoreCount : MonoBehaviour
     private string redName = "redCups";
     private string blueName = "blueCups";
     public UnityEvent gameOver;
-    // Start is called before the first frame update
     void Awake()
     {
         redGameOver = GameObject.Find("redSideGameOver");
@@ -62,7 +61,6 @@ public class ScoreCount : MonoBehaviour
     public void updateRedScore()
     {
         redScoreCount++;
-        Debug.Log("Red Score: " + redScoreCount);
         if (redScoreCount == 4)
         {
             //rerack to six blue cups
@@ -99,7 +97,6 @@ public class ScoreCount : MonoBehaviour
     public void updateBlueScore()
     {
         blueScoreCount++;
-        Debug.Log("Blue Score: " + blueScoreCount);
         if (blueScoreCount == 4)
         {
             //rerack to six red cups
@@ -144,29 +141,39 @@ public class ScoreCount : MonoBehaviour
         Destroy(GameObject.FindWithTag("ball"));
         Destroy(GameObject.FindWithTag(blueName));
         Destroy(GameObject.FindWithTag(redName));
-    Instantiate(blueCups, BluePos, Quaternion.identity);
-    Instantiate(redCups, RedPos, redRotate);
+        Instantiate(blueCups, BluePos, Quaternion.identity);
+        Instantiate(redCups, RedPos, redRotate);
+        foreach (Transform child in GameObject.Find("deadCups").transform)
+        {
+            Debug.Log("destroying");
+            Destroy(child.gameObject);
+        }
         blueScoreCount = 0;
         redScoreCount = 0;
-        
-        
+
+
 
     }
-void redWin()
-{
-    gameOverUI.SetActive(true);
-    gameOverUI.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = "Game Over \n\n Red Wins!";
-    LeanTween.scale(gameOverUI.transform.GetChild(0).gameObject.GetComponent<RectTransform>(), new Vector3(0.01f, 0.01f, 0.01f), 1.5f).setEase(LeanTweenType.easeOutBack);
-    gameOver.Invoke();
-    ReadyUpButton.SetActive(true);
-    Destroy(GameObject.FindWithTag("ball"));
-    Destroy(GameObject.FindWithTag(blueName));
-    Destroy(GameObject.FindWithTag(redName));
-    Instantiate(blueCups, BluePos, Quaternion.identity);
-    Instantiate(redCups, RedPos, redRotate);
-    blueScoreCount = 0;
-    redScoreCount = 0;
+    void redWin()
+    {
+        gameOverUI.SetActive(true);
+        gameOverUI.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = "Game Over \n\n Red Wins!";
+        LeanTween.scale(gameOverUI.transform.GetChild(0).gameObject.GetComponent<RectTransform>(), new Vector3(0.01f, 0.01f, 0.01f), 1.5f).setEase(LeanTweenType.easeOutBack);
+        gameOver.Invoke();
+        ReadyUpButton.SetActive(true);
+        Destroy(GameObject.FindWithTag("ball"));
+        Destroy(GameObject.FindWithTag(blueName));
+        Destroy(GameObject.FindWithTag(redName));
+        Instantiate(blueCups, BluePos, Quaternion.identity);
+        Instantiate(redCups, RedPos, redRotate);
+        foreach (Transform child in GameObject.Find("deadCups").transform)
+        {
+            Debug.Log("destroying");
+            Destroy(child.gameObject);
+        }
+                blueScoreCount = 0;
+        redScoreCount = 0;
 
-}
-    
+    }
+
 }

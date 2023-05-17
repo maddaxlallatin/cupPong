@@ -9,7 +9,7 @@ public class RoundManager : MonoBehaviour
     // Start is called before the first frame update
     public bool ConnectedToServer = false;
     private Vector3 redBallPos = new Vector3(-0.5f, 0.785f, 1.5f);
-    private Vector3 blueBallPos = new Vector3(-0.5f, 0.78f, -1.5f);
+    private Vector3 blueBallPos = new Vector3(-0.5f, 0.78f, -1.375f);
     private int readyUp = 0;
     private int ballsSpawned = 0;
     private int currentBalls = 0;

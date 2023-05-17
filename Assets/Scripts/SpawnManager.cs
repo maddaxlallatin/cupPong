@@ -31,13 +31,11 @@ public class SpawnManager : MonoBehaviour
         }
         else if (leftHandDevices.Count > 1)
         {
-            Debug.Log("Found more than one left hand!");
         }
         
         if (!ConnectedToServer && device.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerValue) && triggerValue == true && pressed == false)
         {
             pressed = true;
-            Debug.Log(triggerValue);
             SpawnBall();
         }
         if(device.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerValue2) && triggerValue2 == false){
