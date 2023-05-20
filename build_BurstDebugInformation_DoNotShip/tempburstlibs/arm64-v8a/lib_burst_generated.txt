@@ -1,4 +1,4 @@
-Library: C:\Users\madda\github\unity\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
+Library: C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-14
 --target=ARMV8A_AARCH64
@@ -156,8 +156,8 @@ Library: C:\Users\madda\github\unity\cupPong\Temp\StagingArea\tempburstlibs\arm6
 --compilation-defines=INPUT_SYSTEM_POSE_VALID
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\madda\github\unity\cupPong\Temp\Burst
---output=C:\Users\madda\github\unity\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
+--temp-folder=C:\UnityProjects\cupPong\Temp\Burst
+--output=C:\UnityProjects\cupPong\Temp\StagingArea\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
